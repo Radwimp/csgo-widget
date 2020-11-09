@@ -9,7 +9,7 @@ const TeamLogo = styled.div`
   height: 64px;
   background-color: ${({ theme }) => theme.quaternaryBg};
   border-radius: 50%;
-  border: 8px solid ${({ theme }) => theme.tetriaryBg};
+  border: 8px solid transparent;
   box-shadow: 0 0 0 1px ${({ theme }) => theme.quaternaryBg};
 `;
 

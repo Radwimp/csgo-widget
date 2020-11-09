@@ -13,6 +13,7 @@ const darkTheme = {
   quaternaryBg: '#1E2028;',
   primaryText: '#FFFFFF',
   secondaryText: '#7D7F8E',
+  primaryBorder: '#3B3D49',
 };
 
 const lightTheme = {
@@ -22,6 +23,7 @@ const lightTheme = {
   quaternaryBg: '#F5F5F5;',
   primaryText: '#000000',
   secondaryText: '#828282',
+  primaryBorder: '#E0E0E0',
 };
 
 ReactDOM.render(
