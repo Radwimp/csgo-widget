@@ -10,14 +10,13 @@ import Team from './Team';
 
 const Container = styled.div`
   padding: 24px;
-  background-color: ${props => props.theme.tetriaryBg};
-  color: ${props => props.theme.primaryText};
+  background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
 const Date = styled.span`
   padding: 4px 8px;
   border-radius: 4px;
-  background-color: ${props => props.theme.secondaryBg};
+  background-color: ${({ theme }) => theme.secondaryBg};
 `;
 
 const EventName = styled.div`
@@ -43,7 +42,7 @@ const Minus = styled.div`
 
 const GameFormat = styled.div`
   margin-top: 6px;
-  color: ${props => props.theme.secondaryText};
+  color: ${({ theme }) => theme.secondaryText};
   font-size: 14px;
 `;
 

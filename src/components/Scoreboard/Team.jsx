@@ -7,10 +7,10 @@ const TeamLogo = styled.div`
   justify-content: center;
   width: 64px;
   height: 64px;
-  background-color: ${props => props.theme.quaternaryBg};
+  background-color: ${({ theme }) => theme.quaternaryBg};
   border-radius: 50%;
-  border: 8px solid ${props => props.theme.tetriaryBg};
-  box-shadow: 0 0 0 1px ${props => props.theme.quaternaryBg};
+  border: 8px solid ${({ theme }) => theme.tetriaryBg};
+  box-shadow: 0 0 0 1px ${({ theme }) => theme.quaternaryBg};
 `;
 
 const TeamName = styled.div`
@@ -21,7 +21,7 @@ const TeamName = styled.div`
 `;
 
 const TeamRank = styled.div`
-  color: ${props => props.theme.secondaryText};
+  color: ${({ theme }) => theme.secondaryText};
   font-size: 12px;
   line-height: 16px;
 `;
@@ -30,7 +30,7 @@ const Team = ({ logo, name, rank }) => {
   return (
     <div>
       <TeamLogo>
-        <img src={logo} alt="teamA" />
+        <img src={logo} alt={name} />
       </TeamLogo>
       <TeamName>{name}</TeamName>
       <TeamRank>
