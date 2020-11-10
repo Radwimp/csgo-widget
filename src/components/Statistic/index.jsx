@@ -4,6 +4,7 @@ import PastMatches from '../PastMatches';
 
 /** Components **/
 import Title from '../Title';
+import MapsStats from '../../components/MapsStats';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.primaryBg};
@@ -26,10 +27,7 @@ const Statistic = () => {
       <Maps>TBA</Maps>
       <Title mainTitle="Личные встречи" />
       <PastMatches />
-      <Title
-        mainTitle="Статистика карт"
-        subTitle="Winrate за последние 3 месяца"
-      />
+      <MapsStats />
     </Container>
   );
 };
