@@ -1,42 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Summary = styled.div`
+const Container = styled.div`
   background-color: ${({ theme }) => theme.secondaryBg};
   display: flex;
   justify-content: space-between;
-  padding: 10px 8px;
+  padding: 1rem 0.8rem;
 `;
 
-const SummaryCell = styled.div`
+const TeamInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-grow: 2;
 `;
 
 const TeamLogo = styled.img`
-  width: 22px;
+  width: 2.2rem;
 `;
 
 const WinAmount = styled.div`
-  margin: 0 12px;
+  margin: 0 1.2rem;
 `;
 
 const Overtimes = styled.div`
-  width: 86px;
-  padding: 0 12px;
+  width: 8.6rem;
+  padding: 0 1.2rem;
   border-left: 1px dashed ${({ theme }) => theme.primaryBorder};
   border-right: 1px dashed ${({ theme }) => theme.primaryBorder};
 `;
 
-const PrimaryText = styled.div`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-`;
-
-const SecondaryText = styled.div`
-  font-size: 12px;
-  line-height: 16px;
+const SecondaryText = styled.h6`
   color: ${({ theme }) => theme.secondaryText};
 `;
 
@@ -48,26 +41,26 @@ const PastMatchesSummary = ({
   overtimesAmount,
 }) => {
   return (
-    <Summary>
-      <SummaryCell>
+    <Container>
+      <TeamInfo>
         <TeamLogo src={teamALogo} alt="Team A" />
         <WinAmount>
-          <PrimaryText>{teamAWinAmount}</PrimaryText>
+          <h3>{teamAWinAmount}</h3>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
-      </SummaryCell>
+      </TeamInfo>
       <Overtimes>
-        <PrimaryText>{overtimesAmount}</PrimaryText>
+        <h3>{overtimesAmount}</h3>
         <SecondaryText>Овертаймов</SecondaryText>
       </Overtimes>
-      <SummaryCell>
+      <TeamInfo>
         <WinAmount>
-          <PrimaryText>{teamBWinAmount}</PrimaryText>
+          <h3>{teamBWinAmount}</h3>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
         <TeamLogo src={teamBLogo} alt="Team B" />
-      </SummaryCell>
-    </Summary>
+      </TeamInfo>
+    </Container>
   );
 };
 

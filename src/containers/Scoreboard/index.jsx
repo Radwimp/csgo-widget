@@ -6,44 +6,41 @@ import VitalityLogo from '../../assets/vitality.svg';
 import FnaticLogo from '../../assets/fnatic.svg';
 
 /** Components **/
-import Team from './Team';
+import Team from '../../components/Team';
 
 const Container = styled.div`
-  padding: 24px;
+  padding: 2.4rem 2.4rem 4rem;
   background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
-const Date = styled.span`
-  padding: 4px 8px;
-  border-radius: 4px;
+const Date = styled.h5`
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 0.4rem;
   background-color: ${({ theme }) => theme.secondaryBg};
 `;
 
-const EventName = styled.div`
-  margin: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
+const EventName = styled.h3`
+  margin: 0.8rem;
 `;
 
 const Teams = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 2.4rem;
 `;
 
 const Minus = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 8rem;
 `;
 
-const GameFormat = styled.div`
-  margin-top: 6px;
+const GameFormat = styled.h5`
+  margin-top: 0.6rem;
   color: ${({ theme }) => theme.secondaryText};
-  font-size: 14px;
 `;
 
 const Scoreboard = () => {
