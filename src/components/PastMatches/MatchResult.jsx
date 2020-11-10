@@ -15,7 +15,13 @@ const TeamLogo = styled.img`
   height: 22px;
   border: 5px solid transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #289d3f;
+  box-shadow: 0 0 0 1px
+    ${({ color }) =>
+      color == 'green'
+        ? '#289d3f'
+        : color == 'red'
+        ? '#EB5757'
+        : 'transparent'};
 `;
 
 const Score = styled.div`
@@ -43,14 +49,22 @@ const EventLogoWrapper = styled.div`
   text-align: right;
 `;
 
-const MatchResult = ({ date, teamALogo, teamBLogo, score, eventLogo }) => {
+const MatchResult = ({
+  date,
+  teamALogo,
+  teamBLogo,
+  score,
+  eventLogo,
+  teamAColor,
+  teamBColor,
+}) => {
   return (
     <Container>
       <Date>{date}</Date>
       <Score>
-        <TeamLogo src={teamALogo} alt="Team A" />
+        <TeamLogo color={teamAColor} src={teamALogo} alt="Team A" />
         <span>{score}</span>
-        <TeamLogo src={teamBLogo} alt="Team B" />
+        <TeamLogo color={teamBColor} src={teamBLogo} alt="Team B" />
       </Score>
       <EventLogoWrapper>
         <img src={eventLogo} alt="Event" />

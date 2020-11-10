@@ -32,6 +32,8 @@ const PastMatches = () => {
         teamBLogo={FnaticLogo}
         score="2:1"
         eventLogo={StarLogo}
+        teamAColor="green"
+        teamBColor="red"
       />
       <MatchResult
         date="16.09.20"
@@ -39,6 +41,8 @@ const PastMatches = () => {
         teamBLogo={FnaticLogo}
         score="0:1"
         eventLogo={TriangleLogo}
+        teamAColor="red"
+        teamBColor="green"
       />
       <MatchResult
         date="16.09.20"
@@ -46,6 +50,8 @@ const PastMatches = () => {
         teamBLogo={FnaticLogo}
         score="0:1"
         eventLogo={TriangleLogo}
+        teamAColor="red"
+        teamBColor="green"
       />
       <MatchResult
         date="16.09.20"
@@ -53,6 +59,8 @@ const PastMatches = () => {
         teamBLogo={FnaticLogo}
         score="1:2"
         eventLogo={StarLogo}
+        teamAColor="red"
+        teamBColor="green"
       />
       <MatchResult
         date="16.09.20"
@@ -60,6 +68,8 @@ const PastMatches = () => {
         teamBLogo={FnaticLogo}
         score="2:1"
         eventLogo={StarLogo}
+        teamAColor="green"
+        teamBColor="red"
       />
     </Container>
   );
