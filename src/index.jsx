@@ -4,7 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'styled-components';
 import apolloClient from 'common/apollo';
+import GlobalStyle from './globalStyle';
 import Routes from './routes';
+
+const commonTheme = {
+  green: '#27AE60',
+  red: '#EB5757',
+};
 
 const darkTheme = {
   primaryBg: '#191A23',
@@ -29,7 +35,8 @@ const lightTheme = {
 ReactDOM.render(
   <ApolloProvider client={apolloClient}>
     <BrowserRouter>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={Object.assign(commonTheme, darkTheme)}>
+        <GlobalStyle />
         <Routes />
       </ThemeProvider>
     </BrowserRouter>

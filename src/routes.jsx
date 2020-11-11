@@ -3,11 +3,11 @@ import { hot } from 'react-hot-loader/root';
 import { Route } from 'react-router-dom';
 
 /** Containers */
-import Home from './containers/Home';
+import Main from './containers/Main';
 
 const Routes = () => (
   <>
-    <Route exact path="/" component={Home} />
+    <Route exact path="/" component={Main} />
   </>
 );
 

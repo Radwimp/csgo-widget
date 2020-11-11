@@ -2,26 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin: 24px 0 16px;
+  padding: 2.4rem 0 1.6rem;
   text-align: left;
 `;
 
-const MainTitle = styled.div`
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  text-transform: uppercase;
-`;
-
-const SubTitle = styled.span`
+const SubTitle = styled.h5`
   color: ${({ theme }) => theme.secondaryText};
 `;
 
 const Title = ({ mainTitle, subTitle }) => {
   return (
     <Container>
-      <MainTitle>{mainTitle}</MainTitle>
-      <SubTitle>{subTitle}</SubTitle>
+      <h4>{mainTitle}</h4>
+      {subTitle && <SubTitle>{subTitle}</SubTitle>}
     </Container>
   );
 };
