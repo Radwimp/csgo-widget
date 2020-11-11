@@ -4,7 +4,7 @@ import styled from 'styled-components';
 /** Components **/
 import Title from '../../components/Title';
 
-const StyledMaps = styled.h6`
+const StyledMaps = styled.div`
   background: ${({ theme }) => theme.secondaryBg};
   padding: 1.2rem;
   border-radius: 0.8rem;

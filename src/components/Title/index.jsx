@@ -6,14 +6,22 @@ const Container = styled.div`
   text-align: left;
 `;
 
-const SubTitle = styled.h5`
+const MainTitle = styled.div`
+  font-size: ${({ theme }) => theme.secondaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
+`;
+
+const SubTitle = styled.div`
   color: ${({ theme }) => theme.secondaryText};
+  font-size: ${({ theme }) => theme.tetriaryFontSize};
+  line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
 const Title = ({ mainTitle, subTitle }) => {
   return (
     <Container>
-      <h4>{mainTitle}</h4>
+      <MainTitle>{mainTitle}</MainTitle>
       {subTitle && <SubTitle>{subTitle}</SubTitle>}
     </Container>
   );

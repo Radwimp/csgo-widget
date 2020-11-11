@@ -29,7 +29,13 @@ const Overtimes = styled.div`
   border-right: 1px dashed ${({ theme }) => theme.primaryBorder};
 `;
 
-const SecondaryText = styled.h6`
+const PrimaryText = styled.div`
+  font-size: ${({ theme }) => theme.primaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
+`;
+
+const SecondaryText = styled.div`
   color: ${({ theme }) => theme.secondaryText};
 `;
 
@@ -45,17 +51,17 @@ const PastMatchesSummary = ({
       <TeamInfo>
         <TeamLogo src={teamALogo} alt="Team A" />
         <WinAmount>
-          <h3>{teamAWinAmount}</h3>
+          <PrimaryText>{teamAWinAmount}</PrimaryText>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
       </TeamInfo>
       <Overtimes>
-        <h3>{overtimesAmount}</h3>
+        <PrimaryText>{overtimesAmount}</PrimaryText>
         <SecondaryText>Овертаймов</SecondaryText>
       </Overtimes>
       <TeamInfo>
         <WinAmount>
-          <h3>{teamBWinAmount}</h3>
+          <PrimaryText>{teamBWinAmount}</PrimaryText>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
         <TeamLogo src={teamBLogo} alt="Team B" />

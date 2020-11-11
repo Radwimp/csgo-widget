@@ -10,6 +10,16 @@ const Container = styled.div`
   margin-bottom: 1px;
 `;
 
+const Score = styled.div`
+  width: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: ${({ theme }) => theme.primaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
+`;
+
 const TeamLogo = styled.img`
   width: 2.2rem;
   height: 2.2rem;
@@ -18,16 +28,8 @@ const TeamLogo = styled.img`
   box-shadow: 0 0 0 1px ${({ color, theme }) => theme[color] || 'transparent'};
 `;
 
-const Score = styled.div`
-  width: 12rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Date = styled.h6`
+const Date = styled.div`
   min-width: 4.2rem;
-  text-align: left;
   color: ${({ theme }) => theme.secondaryText};
 `;
 
@@ -54,7 +56,7 @@ const PastMatchResult = ({
       <Date>{date}</Date>
       <Score>
         <TeamLogo color={teamAColor} src={teamALogo} alt="Team A" />
-        <h3>{score}</h3>
+        {score}
         <TeamLogo color={teamBColor} src={teamBLogo} alt="Team B" />
       </Score>
       <EventLogoWrapper>

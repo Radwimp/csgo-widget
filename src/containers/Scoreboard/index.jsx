@@ -13,15 +13,19 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
-const Date = styled.h5`
+const Date = styled.div`
   display: inline-block;
   padding: 0.2rem 1rem;
   border-radius: 0.4rem;
   background-color: ${({ theme }) => theme.secondaryBg};
+  font-size: ${({ theme }) => theme.tetriaryFontSize};
+  line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
-const EventName = styled.h3`
+const EventName = styled.div`
   margin: 0.8rem;
+  font-size: ${({ theme }) => theme.primaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
 `;
 
 const Teams = styled.div`
@@ -38,9 +42,11 @@ const Minus = styled.div`
   line-height: 8rem;
 `;
 
-const GameFormat = styled.h5`
+const GameFormat = styled.div`
   margin-top: 0.6rem;
   color: ${({ theme }) => theme.secondaryText};
+  font-size: ${({ theme }) => theme.tetriaryFontSize};
+  line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
 const Scoreboard = () => {

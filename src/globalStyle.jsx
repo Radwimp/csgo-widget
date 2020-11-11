@@ -32,8 +32,7 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
-  html,
-  body {
+  html {
     height: 100%;
     width: 100%;
     text-align: center;
@@ -46,6 +45,11 @@ const GlobalStyle = createGlobalStyle`
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 
   input,
@@ -82,30 +86,6 @@ const GlobalStyle = createGlobalStyle`
 
   img {
     vertical-align: top;
-  }
-
-  h3 {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-    text-align: center;
-  }
-
-  h4 {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    text-transform: uppercase;
-  }
-
-  h5 {
-    font-size: 1.4rem;
-    font-weight: normal;
-  }
-
-  h6 {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    text-align: center;
-    font-weight: normal;
   }
 `;
 

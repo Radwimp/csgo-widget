@@ -17,12 +17,14 @@ const TeamLogo = styled.img`
   width: 4.4rem;
 `;
 
-const TeamName = styled.h4`
+const TeamName = styled.div`
   margin-top: 0.4rem;
   text-transform: capitalize;
+  font-size: ${({ theme }) => theme.secondaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
 `;
 
-const TeamRank = styled.h6`
+const TeamRank = styled.div`
   color: ${({ theme }) => theme.secondaryText};
 `;
 

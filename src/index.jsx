@@ -10,13 +10,18 @@ import Routes from './routes';
 const commonTheme = {
   green: '#27AE60',
   red: '#EB5757',
+  primaryFontSize: '1.8rem',
+  secondaryFontSize: '1.6rem',
+  tetriaryFontSize: '1.4rem',
+  primaryLineHeight: '2.4rem',
+  secondaryLineHeight: '2rem',
 };
 
 const darkTheme = {
   primaryBg: '#191A23',
   secondaryBg: '#252735',
   tetriaryBg: '#101116',
-  quaternaryBg: '#1E2028;',
+  quaternaryBg: '#1E2028',
   primaryText: '#FFFFFF',
   secondaryText: '#7D7F8E',
   primaryBorder: '#3B3D49',
