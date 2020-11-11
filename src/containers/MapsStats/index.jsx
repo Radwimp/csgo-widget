@@ -4,13 +4,13 @@ import styled from 'styled-components';
 /** Images **/
 import VitalityLogo from '../../assets/vitality.svg';
 import FnaticLogo from '../../assets/fnatic.svg';
-import Inferno from '../../assets/maps/inferno.png';
-import Vertigo from '../../assets/maps/vertigo.png';
-import Mirage from '../../assets/maps/mirage.png';
-import Dust2 from '../../assets/maps/dust2.png';
-import Nuke from '../../assets/maps/nuke.png';
-import Train from '../../assets/maps/train.png';
-import Overpass from '../../assets/maps/overpass.png';
+import Inferno from '../../assets/maps/small/inferno.png';
+import Vertigo from '../../assets/maps/small/vertigo.png';
+import Mirage from '../../assets/maps/small/mirage.png';
+import Dust2 from '../../assets/maps/small/dust 2.png';
+import Nuke from '../../assets/maps/small/nuke.png';
+import Train from '../../assets/maps/small/train.png';
+import Overpass from '../../assets/maps/small/overpass.png';
 
 /** Components **/
 import Title from '../../components/Title';
