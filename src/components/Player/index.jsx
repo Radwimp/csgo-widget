@@ -16,9 +16,7 @@ const Photo = styled.img`
 `;
 
 const Name = styled.div`
-  font-size: ;
-  line-height: ;
-  color: #7d7f8e;
+  color: ${({ theme }) => theme.secondaryText}; ;
 `;
 
 const Nick = styled.div`

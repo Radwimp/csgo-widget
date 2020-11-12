@@ -1,6 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+function getChoise(choise) {
+  if (choise === 'pick') {
+    return <Choise color="blue">pick</Choise>;
+  } else if (choise === 'ban') {
+    return <Choise color="red">ban</Choise>;
+  }
+
+  return null;
+}
+
 const MapHead = styled.div`
   display: flex;
   justify-content: space-between;
@@ -9,9 +19,24 @@ const MapHead = styled.div`
   text-transform: uppercase;
 `;
 
+const Team = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const TeamLogo = styled.img`
-  width: 1.65rem;
-  margin: 0.85rem 2rem;
+  width: 1.6rem;
+  margin: 0.8rem 2rem;
+`;
+
+const Choise = styled.div`
+  background-color: ${({ color, theme }) => theme[color]};
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  width: 3.2rem;
+  height: 1.4rem;
+  padding-bottom: 1.6rem;
 `;
 
 const MapSummary = styled.div`
@@ -36,17 +61,26 @@ const RightSide = styled.div`
   text-align: right;
 `;
 
-const Map = ({ name, bg, teamALogo, teamBLogo, isOpen, teamAChoise }) => (
+const Map = ({
+  name,
+  bg,
+  teamALogo,
+  teamBLogo,
+  isOpen,
+  firstTeamChoise,
+  secondTeamChoise,
+}) => (
   <>
     <MapHead>
-      <div>
+      <Team>
         <TeamLogo src={teamALogo} alt="Team A" />
-        {/* {teamAChoise && <div>{teamAChoise}</div>} */}
-      </div>
+        {getChoise(firstTeamChoise)}
+      </Team>
       {name}
-      <div>
+      <Team>
+        {getChoise(secondTeamChoise)}
         <TeamLogo src={teamBLogo} alt="Team B" />
-      </div>
+      </Team>
     </MapHead>
     <MapSummary bg={bg}>
       <LeftSide>

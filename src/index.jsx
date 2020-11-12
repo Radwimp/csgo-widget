@@ -10,6 +10,7 @@ import Routes from './routes';
 const commonTheme = {
   green: '#27AE60',
   red: '#EB5757',
+  blue: '#2F80ED',
   primaryFontSize: '1.8rem',
   secondaryFontSize: '1.6rem',
   tetriaryFontSize: '1.4rem',

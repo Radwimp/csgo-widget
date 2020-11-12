@@ -35,6 +35,7 @@ const MapsStats = () => (
         bg={Inferno}
         teamALogo={VitalityLogo}
         teamBLogo={FnaticLogo}
+        secondTeamChoise="pick"
         isOpen
       />
       <MapStats />
@@ -45,6 +46,7 @@ const MapsStats = () => (
         bg={Vertigo}
         teamALogo={VitalityLogo}
         teamBLogo={FnaticLogo}
+        secondTeamChoise="ban"
       />
     </Container>
     <Container>
@@ -53,6 +55,7 @@ const MapsStats = () => (
         bg={Mirage}
         teamALogo={VitalityLogo}
         teamBLogo={FnaticLogo}
+        firstTeamChoise="pick"
       />
     </Container>
     <Container>
