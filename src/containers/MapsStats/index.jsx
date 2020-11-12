@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 /** Images **/
-import VitalityLogo from '../../assets/vitality.svg';
-import FnaticLogo from '../../assets/fnatic.svg';
-import Inferno from '../../assets/maps/small/inferno.png';
-import Vertigo from '../../assets/maps/small/vertigo.png';
-import Mirage from '../../assets/maps/small/mirage.png';
-import Dust2 from '../../assets/maps/small/dust 2.png';
-import Nuke from '../../assets/maps/small/nuke.png';
-import Train from '../../assets/maps/small/train.png';
-import Overpass from '../../assets/maps/small/overpass.png';
+import VitalityLogo from '../../assets/teams/vitality.png';
+import FnaticLogo from '../../assets/teams/fnatic.png';
+import Inferno from '../../assets/mobile/maps/inferno.png';
+import Vertigo from '../../assets/mobile/maps/vertigo.png';
+import Mirage from '../../assets/mobile/maps/mirage.png';
+import Dust2 from '../../assets/mobile/maps/dust2.png';
+import Nuke from '../../assets/mobile/maps/nuke.png';
+import Train from '../../assets/mobile/maps/train.png';
+import Overpass from '../../assets/mobile/maps/overpass.png';
 
 /** Components **/
 import Title from '../../components/Title';
@@ -33,10 +33,10 @@ const MapsStats = () => (
       <Map
         name="Inferno"
         bg={Inferno}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
         secondTeamChoise="pick"
-        isOpen
+        open
       />
       <MapStats />
     </Container>
@@ -44,8 +44,8 @@ const MapsStats = () => (
       <Map
         name="Vertigo"
         bg={Vertigo}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
         secondTeamChoise="ban"
       />
     </Container>
@@ -53,8 +53,8 @@ const MapsStats = () => (
       <Map
         name="Mirage"
         bg={Mirage}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
         firstTeamChoise="pick"
       />
     </Container>
@@ -62,32 +62,32 @@ const MapsStats = () => (
       <Map
         name="Dust2"
         bg={Dust2}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
       />
     </Container>
     <Container>
       <Map
         name="Nuke"
         bg={Nuke}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
       />
     </Container>
     <Container>
       <Map
         name="Train"
         bg={Train}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
       />
     </Container>
     <Container>
       <Map
         name="Overpass"
         bg={Overpass}
-        teamALogo={VitalityLogo}
-        teamBLogo={FnaticLogo}
+        firstTeamLogo={VitalityLogo}
+        secondTeamLogo={FnaticLogo}
       />
     </Container>
   </>

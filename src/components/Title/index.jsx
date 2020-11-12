@@ -10,6 +10,7 @@ const MainTitle = styled.div`
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
   font-weight: bold;
+  text-transform: uppercase;
 `;
 
 const SubTitle = styled.div`

@@ -6,20 +6,20 @@ import Title from '../../components/Title';
 import Player from '../../components/Player';
 
 /** Images **/
-import VitalityLogo from '../../assets/vitality.svg';
-import FnaticLogo from '../../assets/fnatic.svg';
+import VitalityLogo from '../../assets/teams/vitality.png';
+import FnaticLogo from '../../assets/teams/fnatic.png';
 import France from '../../assets/country/France.svg';
 import Sweden from '../../assets/country/Sweden.svg';
-import Shox from '../../assets/player/shox.svg';
-import Rpk from '../../assets/player/rpk.svg';
-import Apex from '../../assets/player/apex.svg';
-import Zywoo from '../../assets/player/zywoo.svg';
-import Misuta from '../../assets/player/misuta.svg';
-import Flusha from '../../assets/player/flusha.svg';
-import Jw from '../../assets/player/jw.svg';
-import Krimz from '../../assets/player/krimz.svg';
-import Golden from '../../assets/player/golden.svg';
-import Brollan from '../../assets/player/brollan.svg';
+import Shox from '../../assets/players/shox.svg';
+import Rpk from '../../assets/players/rpk.svg';
+import Apex from '../../assets/players/apex.svg';
+import Zywoo from '../../assets/players/zywoo.svg';
+import Misuta from '../../assets/players/misuta.svg';
+import Flusha from '../../assets/players/flusha.svg';
+import Jw from '../../assets/players/jw.svg';
+import Krimz from '../../assets/players/krimz.svg';
+import Golden from '../../assets/players/golden.svg';
+import Brollan from '../../assets/players/brollan.svg';
 
 const Container = styled.div`
   margin-bottom: 1.6rem;
@@ -29,8 +29,11 @@ const Container = styled.div`
 
 const Team = styled.div`
   position: relative;
-  padding: 1.6rem 0;
+  padding: 1.4rem 0;
   background-color: ${({ theme }) => theme.secondaryBg};
+  font-size: ${({ theme }) => theme.secondaryFontSize};
+  line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
 `;
 
 const TeamLogo = styled.img`
@@ -45,7 +48,7 @@ const Roster = () => (
     <Container>
       <Team>
         <TeamLogo src={VitalityLogo} alt="Team A" />
-        <b>Vitality</b>
+        Vitality
       </Team>
       <Player
         name="Richard Papillion"

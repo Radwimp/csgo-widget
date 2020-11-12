@@ -11,6 +11,7 @@ const commonTheme = {
   green: '#27AE60',
   red: '#EB5757',
   blue: '#2F80ED',
+  grey: '#BDBDBD',
   primaryFontSize: '1.8rem',
   secondaryFontSize: '1.6rem',
   tetriaryFontSize: '1.4rem',
@@ -25,7 +26,7 @@ const darkTheme = {
   quaternaryBg: '#1E2028',
   primaryText: '#FFFFFF',
   secondaryText: '#7D7F8E',
-  primaryBorder: '#3B3D49',
+  border: '#3B3D49',
 };
 
 const lightTheme = {
@@ -35,7 +36,7 @@ const lightTheme = {
   quaternaryBg: '#F5F5F5;',
   primaryText: '#000000',
   secondaryText: '#828282',
-  primaryBorder: '#E0E0E0',
+  border: '#E0E0E0',
 };
 
 ReactDOM.render(

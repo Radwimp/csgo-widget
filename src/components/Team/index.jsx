@@ -10,11 +10,12 @@ const TeamLogoWrapper = styled.div`
   background-color: ${({ theme }) => theme.quaternaryBg};
   border-radius: 50%;
   border: 0.8rem solid ${({ theme }) => theme.tetriaryBg};
-  box-shadow: 0 0 0 1px ${({ theme }) => theme.quaternaryBg};
+  box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.quaternaryBg};
 `;
 
 const TeamLogo = styled.img`
   width: 4.4rem;
+  height: 4rem;
 `;
 
 const TeamName = styled.div`
@@ -22,6 +23,7 @@ const TeamName = styled.div`
   text-transform: capitalize;
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
 `;
 
 const TeamRank = styled.div`

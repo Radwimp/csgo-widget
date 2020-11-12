@@ -5,7 +5,7 @@ const Stat = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1.6rem;
-  border-bottom: 1px dashed #3b3d49;
+  border-bottom: 0.1rem dashed #3b3d49;
   font-size: ${({ theme }) => theme.tetriaryFontSize};
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;

@@ -11,11 +11,13 @@ const Container = styled.div`
 const TeamInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-grow: 2;
 `;
 
 const TeamLogo = styled.img`
   width: 2.2rem;
+  height: 2rem;
 `;
 
 const WinAmount = styled.div`
@@ -25,8 +27,8 @@ const WinAmount = styled.div`
 const Overtimes = styled.div`
   width: 8.6rem;
   padding: 0 1.2rem;
-  border-left: 1px dashed ${({ theme }) => theme.primaryBorder};
-  border-right: 1px dashed ${({ theme }) => theme.primaryBorder};
+  border-left: 0.1rem dashed ${({ theme }) => theme.border};
+  border-right: 0.1rem dashed ${({ theme }) => theme.border};
 `;
 
 const PrimaryText = styled.div`
@@ -40,18 +42,18 @@ const SecondaryText = styled.div`
 `;
 
 const PastMatchesSummary = ({
-  teamALogo,
-  teamBLogo,
-  teamAWinAmount,
-  teamBWinAmount,
+  firstTeamLogo,
+  secondTeamLogo,
+  firstTeamWinAmount,
+  secondTeamWinAmount,
   overtimesAmount,
 }) => {
   return (
     <Container>
       <TeamInfo>
-        <TeamLogo src={teamALogo} alt="Team A" />
+        <TeamLogo src={firstTeamLogo} alt="Team A" />
         <WinAmount>
-          <PrimaryText>{teamAWinAmount}</PrimaryText>
+          <PrimaryText>{firstTeamWinAmount}</PrimaryText>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
       </TeamInfo>
@@ -61,10 +63,10 @@ const PastMatchesSummary = ({
       </Overtimes>
       <TeamInfo>
         <WinAmount>
-          <PrimaryText>{teamBWinAmount}</PrimaryText>
+          <PrimaryText>{secondTeamWinAmount}</PrimaryText>
           <SecondaryText>Победы</SecondaryText>
         </WinAmount>
-        <TeamLogo src={teamBLogo} alt="Team B" />
+        <TeamLogo src={secondTeamLogo} alt="Team B" />
       </TeamInfo>
     </Container>
   );

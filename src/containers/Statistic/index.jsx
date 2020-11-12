@@ -6,6 +6,7 @@ import PastMatches from '../PastMatches';
 import MapsStats from '../MapsStats';
 import Maps from '../Maps';
 import Roster from '../Roster';
+import GamesHistoryContainer from '../GamesHistoryContainer';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.primaryBg};
@@ -20,6 +21,7 @@ const Statistic = () => {
     <Container>
       <Maps />
       <PastMatches />
+      <GamesHistoryContainer />
       <MapsStats />
       <Roster />
     </Container>

@@ -7,7 +7,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.4rem 1.6rem;
-  margin-bottom: 1px;
+  margin-bottom: 0.1rem;
 `;
 
 const Score = styled.div`
@@ -21,11 +21,12 @@ const Score = styled.div`
 `;
 
 const TeamLogo = styled.img`
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   border: 0.5rem solid transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px ${({ color, theme }) => theme[color] || 'transparent'};
+  box-shadow: 0 0 0 0.1rem
+    ${({ color, theme }) => theme[color] || 'transparent'};
 `;
 
 const Date = styled.div`
@@ -44,20 +45,20 @@ const EventLogo = styled.img`
 
 const PastMatchResult = ({
   date,
-  teamALogo,
-  teamBLogo,
+  firstTeamLogo,
+  secondTeamLogo,
   score,
   eventLogo,
-  teamAColor,
-  teamBColor,
+  firstTeamColor,
+  secondTeamColor,
 }) => {
   return (
     <Container>
       <Date>{date}</Date>
       <Score>
-        <TeamLogo color={teamAColor} src={teamALogo} alt="Team A" />
+        <TeamLogo color={firstTeamColor} src={firstTeamLogo} alt="Team A" />
         {score}
-        <TeamLogo color={teamBColor} src={teamBLogo} alt="Team B" />
+        <TeamLogo color={secondTeamColor} src={secondTeamLogo} alt="Team B" />
       </Score>
       <EventLogoWrapper>
         <EventLogo src={eventLogo} alt="Event" />

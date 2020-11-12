@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 /** Images **/
-import VitalityLogo from '../../assets/vitality.svg';
-import FnaticLogo from '../../assets/fnatic.svg';
+import VitalityLogo from '../../assets/teams/vitality.png';
+import FnaticLogo from '../../assets/teams/fnatic.png';
 
 /** Components **/
 import Team from '../../components/Team';
@@ -26,6 +26,7 @@ const EventName = styled.div`
   margin: 0.8rem;
   font-size: ${({ theme }) => theme.primaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
 `;
 
 const Teams = styled.div`

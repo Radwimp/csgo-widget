@@ -43,14 +43,19 @@ const MapSummary = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.6rem 1.6rem;
   background-image: url(${({ bg }) => bg});
   background-size: cover;
-  padding: 0.6rem 1.6rem;
+  color: white;
 `;
 
-const Winrate = styled.div`
+const PrimaryText = styled.div`
   font-size: ${({ theme }) => theme.tetriaryFontSize};
   font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
+`;
+
+const SecondaryText = styled.div`
+  color: ${({ theme }) => theme.grey};
 `;
 
 const LeftSide = styled.div`
@@ -64,33 +69,33 @@ const RightSide = styled.div`
 const Map = ({
   name,
   bg,
-  teamALogo,
-  teamBLogo,
-  isOpen,
+  firstTeamLogo,
+  secondTeamLogo,
   firstTeamChoise,
   secondTeamChoise,
+  open,
 }) => (
   <>
     <MapHead>
       <Team>
-        <TeamLogo src={teamALogo} alt="Team A" />
+        <TeamLogo src={firstTeamLogo} alt="Team A" />
         {getChoise(firstTeamChoise)}
       </Team>
       {name}
       <Team>
         {getChoise(secondTeamChoise)}
-        <TeamLogo src={teamBLogo} alt="Team B" />
+        <TeamLogo src={secondTeamLogo} alt="Team B" />
       </Team>
     </MapHead>
     <MapSummary bg={bg}>
       <LeftSide>
-        <Winrate>17%</Winrate>
-        <div>6 maps</div>
+        <PrimaryText>17%</PrimaryText>
+        <SecondaryText>6 maps</SecondaryText>
       </LeftSide>
-      {!isOpen && <u>Статистика карты</u>}
+      {!open && <u>Статистика карты</u>}
       <RightSide>
-        <Winrate bold>78%</Winrate>
-        <div>9 maps</div>
+        <PrimaryText bold>78%</PrimaryText>
+        <SecondaryText>9 maps</SecondaryText>
       </RightSide>
     </MapSummary>
   </>

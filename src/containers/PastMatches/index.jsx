@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 /** Images **/
-import VitalityLogo from '../../assets/vitality.svg';
-import FnaticLogo from '../../assets/fnatic.svg';
-import TriangleLogo from '../../assets/triangle.svg';
-import StarLogo from '../../assets/star.svg';
+import VitalityLogo from '../../assets/teams/vitality.png';
+import FnaticLogo from '../../assets/teams/fnatic.png';
+import TriangleLogo from '../../assets/events/triangle.png';
+import StarLogo from '../../assets/events/star.png';
+import EslOneLogo from '../../assets/events/esl-one.png';
+import DreamhackLogo from '../../assets/events/dreamhack.png';
+import EslProLogo from '../../assets/events/esl-pro.png';
 
 /** Components **/
 import PastMatchesSummary from '../../components/PastMatchesSummary';
@@ -23,56 +26,56 @@ const PastMatches = () => {
       <Title mainTitle="Личные встречи" />
       <Container>
         <PastMatchesSummary
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
-          teamAWinAmount="2"
-          teamBWinAmount="3"
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
+          firstTeamWinAmount="2"
+          secondTeamWinAmount="3"
           overtimesAmount="0"
         />
         <PastMatchResult
           date="16.09.20"
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
           score="2:1"
           eventLogo={StarLogo}
-          teamAColor="green"
-          teamBColor="red"
+          firstTeamColor="green"
+          secondTeamColor="red"
         />
         <PastMatchResult
           date="16.09.20"
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
           score="0:1"
           eventLogo={TriangleLogo}
-          teamAColor="red"
-          teamBColor="green"
+          firstTeamColor="red"
+          secondTeamColor="green"
         />
         <PastMatchResult
           date="16.09.20"
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
           score="0:1"
-          eventLogo={TriangleLogo}
-          teamAColor="red"
-          teamBColor="green"
+          eventLogo={EslOneLogo}
+          firstTeamColor="red"
+          secondTeamColor="green"
         />
         <PastMatchResult
           date="16.09.20"
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
           score="1:2"
-          eventLogo={StarLogo}
-          teamAColor="red"
-          teamBColor="green"
+          eventLogo={DreamhackLogo}
+          firstTeamColor="red"
+          secondTeamColor="green"
         />
         <PastMatchResult
           date="16.09.20"
-          teamALogo={VitalityLogo}
-          teamBLogo={FnaticLogo}
+          firstTeamLogo={VitalityLogo}
+          secondTeamLogo={FnaticLogo}
           score="2:1"
-          eventLogo={StarLogo}
-          teamAColor="green"
-          teamBColor="red"
+          eventLogo={EslProLogo}
+          firstTeamColor="green"
+          secondTeamColor="red"
         />
       </Container>
     </>
