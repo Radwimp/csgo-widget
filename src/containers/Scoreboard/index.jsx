@@ -24,9 +24,9 @@ const Date = styled.div`
 
 const EventName = styled.div`
   margin: 0.8rem;
+  font-weight: bold;
   font-size: ${({ theme }) => theme.primaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
 `;
 
 const Teams = styled.div`
@@ -37,7 +37,6 @@ const Teams = styled.div`
 
 const Minus = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   font-size: 4.8rem;
   line-height: 8rem;

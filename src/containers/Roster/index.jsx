@@ -31,9 +31,9 @@ const Team = styled.div`
   position: relative;
   padding: 1.4rem 0;
   background-color: ${({ theme }) => theme.secondaryBg};
+  font-weight: bold;
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
 `;
 
 const TeamLogo = styled.img`
@@ -84,7 +84,7 @@ const Roster = () => (
     <Container>
       <Team>
         <TeamLogo src={FnaticLogo} alt="Team B" />
-        <b>Fnatic</b>
+        Fnatic
       </Team>
       <Player
         name="Robin Rönnquist"

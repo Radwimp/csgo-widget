@@ -7,10 +7,10 @@ const Container = styled.div`
 `;
 
 const MainTitle = styled.div`
+  text-transform: uppercase;
+  font-weight: bold;
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
-  text-transform: uppercase;
 `;
 
 const SubTitle = styled.div`
@@ -19,10 +19,10 @@ const SubTitle = styled.div`
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
-const Title = ({ mainTitle, subTitle }) => {
+const Title = ({ children, subTitle }) => {
   return (
     <Container>
-      <MainTitle>{mainTitle}</MainTitle>
+      <MainTitle>{children}</MainTitle>
       {subTitle && <SubTitle>{subTitle}</SubTitle>}
     </Container>
   );

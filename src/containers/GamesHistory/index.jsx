@@ -17,8 +17,8 @@ const GamesSummaryInfo = styled.div`
 const Score = styled.div`
   width: 2rem;
   margin-left: 0.8rem;
-  background-color: ${({ theme }) => theme.secondaryBg};
   border-radius: 0.4rem;
+  background-color: ${({ theme }) => theme.secondaryBg};
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 
   &:first-of-type {
@@ -36,6 +36,7 @@ const GamesSummary = styled.div`
     line-height: ${({ theme }) => theme.secondaryLineHeight};
   }
 `;
+
 const GamesHistory = ({ team = '', maps = '0', wins = '0', games = [] }) => (
   <>
     <GamesSummary>
