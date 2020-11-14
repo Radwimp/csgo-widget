@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import PastMatches from '../PastMatches';
 import MapsStats from '../MapsStats';
 import Maps from '../Maps';
-import Roster from '../Roster';
+import Rosters from '../Rosters';
 import GamesHistoryContainer from '../GamesHistoryContainer';
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const Statistic = () => {
       <PastMatches />
       <GamesHistoryContainer />
       <MapsStats />
-      <Roster />
+      <Rosters />
     </Container>
   );
 };

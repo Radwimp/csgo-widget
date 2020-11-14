@@ -18,8 +18,11 @@ import Misuta from '../../assets/players/misuta.svg';
 import Flusha from '../../assets/players/flusha.svg';
 import Jw from '../../assets/players/jw.svg';
 import Krimz from '../../assets/players/krimz.svg';
-import Golden from '../../assets/players/golden.svg';
 import Brollan from '../../assets/players/brollan.svg';
+import Golden from '../../assets/players/golden.svg';
+
+/** Consts **/
+import { fnaticRoster, vitalityRoster } from './rosters';
 
 const Container = styled.div`
   margin-bottom: 1.6rem;
@@ -31,9 +34,9 @@ const Team = styled.div`
   position: relative;
   padding: 1.4rem 0;
   background-color: ${({ theme }) => theme.secondaryBg};
-  font-weight: bold;
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
+  font-weight: bold;
 `;
 
 const TeamLogo = styled.img`
@@ -42,7 +45,7 @@ const TeamLogo = styled.img`
   width: 2.2rem;
 `;
 
-const Roster = () => (
+const Rosters = () => (
   <>
     <Title mainTitle="Состав команд" />
     <Container>
@@ -50,79 +53,19 @@ const Roster = () => (
         <TeamLogo src={VitalityLogo} alt="Team A" />
         Vitality
       </Team>
-      <Player
-        name="Richard Papillion"
-        nick="shox"
-        photo={Shox}
-        countryFlag={France}
-      />
-      <Player
-        name="Cédric Guipouy"
-        nick="RpK"
-        photo={Rpk}
-        countryFlag={France}
-      />
-      <Player
-        name="Dan Madesclaire"
-        nick="apEX"
-        photo={Apex}
-        countryFlag={France}
-      />
-      <Player
-        name="Mathieu Herbaut"
-        nick="ZywOo"
-        photo={Zywoo}
-        countryFlag={France}
-      />
-      <Player
-        name="Kévin Rabier"
-        nick="misutaaa"
-        photo={Misuta}
-        countryFlag={France}
-      />
+      {vitalityRoster.map(player => (
+        <Player {...player} />
+      ))}
     </Container>
     <Container>
       <Team>
         <TeamLogo src={FnaticLogo} alt="Team B" />
-        Fnatic
+        <b>Fnatic</b>
       </Team>
-      <Player
-        name="Robin Rönnquist"
-        nick="flusha"
-        photo={Flusha}
-        countryFlag={Sweden}
-      />
-      <Player
-        name="Robin Rönnquist"
-        nick="JW"
-        photo={Jw}
-        countryFlag={Sweden}
-      />
-      <Player
-        name="Jesper Wecksell"
-        nick="misutaaa"
-        photo={Misuta}
-        countryFlag={Sweden}
-      />
-      <Player
-        name="Freddy Johansson"
-        nick="KRIMZ"
-        photo={Krimz}
-        countryFlag={Sweden}
-      />
-      <Player
-        name="Maikil Selim"
-        nick="Golden"
-        photo={Golden}
-        countryFlag={Sweden}
-      />
-      <Player
-        name="Ludvig Brolin"
-        nick="Brollan"
-        photo={Golden}
-        countryFlag={Sweden}
-      />
+      {fnaticRoster.map(player => (
+        <Player {...player} />
+      ))}
     </Container>
   </>
 );
-export default Roster;
+export default Rosters;
