@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { SwitchTransition, Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
 /** Images **/
@@ -20,6 +21,14 @@ const Date = styled.div`
   background-color: ${({ theme }) => theme.secondaryBg};
   font-size: ${({ theme }) => theme.tetriaryFontSize};
   line-height: ${({ theme }) => theme.secondaryLineHeight};
+`;
+
+const Live = styled.div`
+  width: 3.2rem;
+  margin: auto;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  background-color: ${({ theme }) => theme.red};
 `;
 
 const EventName = styled.div`
@@ -54,9 +63,19 @@ const GameFormat = styled.div`
 `;
 
 const Scoreboard = () => {
+  const [live, setLive] = useState(true);
+
   return (
     <Container>
-      <Date>22.10.20 - 16:00</Date>
+      <SwitchTransition>
+        <Transition>
+          {live ? (
+            <Live>Live</Live>
+          ) : (
+            <Date onClick={() => setLive(live => !live)}>22.10.20 - 16:00</Date>
+          )}
+        </Transition>
+      </SwitchTransition>
       <EventName>2020 FunSpark ULTI</EventName>
       <Teams>
         <Team logo={VitalityLogo} name="Vitality" rank="4" />
