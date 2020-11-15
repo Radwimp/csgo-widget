@@ -45,14 +45,15 @@ const MapHead = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
 `;
 
 const Team = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ align }) =>
+    align === 'right' ? 'flex-end' : 'flex-start'};
   align-items: center;
   width: 6.8rem;
 `;
@@ -63,6 +64,7 @@ const TeamLogo = styled.img`
 
 const Choise = styled.div`
   width: 3.2rem;
+  margin: 0 1.2rem;
   border-radius: 0.4rem;
   text-transform: uppercase;
   background-color: ${({ color, theme }) => theme[color]};
@@ -89,12 +91,12 @@ const Map = ({
 }) => (
   <>
     <MapHead>
-      <Team>
+      <Team align="left">
         <TeamLogo src={firstTeamLogo} alt="Team A" />
         {getChoise(firstTeamChoise)}
       </Team>
       {name}
-      <Team>
+      <Team align="right">
         {getChoise(secondTeamChoise)}
         <TeamLogo src={secondTeamLogo} alt="Team B" />
       </Team>

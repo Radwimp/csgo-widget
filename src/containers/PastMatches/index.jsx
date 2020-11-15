@@ -17,7 +17,7 @@ const Container = styled.div`
 const PastMatches = () => {
   return (
     <>
-      <Title mainTitle="Личные встречи" />
+      <Title>Личные встречи</Title>
       <Container>
         <PastMatchesSummary {...summary} />
         {results.map((result, i) => (

@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Container = styled.div`
   padding: 2.4rem 0 1.6rem;
   text-align: left;
+
+  @media (min-width: 576px) {
+    padding-top: 4.8rem;
+  }
 `;
 
 const MainTitle = styled.div`

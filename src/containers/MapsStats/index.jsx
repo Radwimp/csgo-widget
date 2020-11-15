@@ -11,68 +11,48 @@ import MapStats from '../../components/MapStats';
 const MapsStats = () => (
   <>
     <Title subTitle="Winrate за последние 3 месяца">Статистика карт</Title>
-    <MapStats firstTeamLogo={VitalityLogo} secondTeamLogo={FnaticLogo} />
-    {/* <Container>
-      <Map
-        name="Inferno"
-        bg={Inferno}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-        secondTeamChoise="pick"
-        open
-      />
-      <MapStats />
-    </Container> */}
-    {/* <Container>
-      <Map
-        name="Vertigo"
-        bg={Vertigo}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-        secondTeamChoise="ban"
-      />
-    </Container>
-    <Container>
-      <Map
-        name="Mirage"
-        bg={Mirage}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-        firstTeamChoise="pick"
-      />
-    </Container>
-    <Container>
-      <Map
-        name="Dust2"
-        bg={Dust2}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-      />
-    </Container>
-    <Container>
-      <Map
-        name="Nuke"
-        bg={Nuke}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-      />
-    </Container>
-    <Container>
-      <Map
-        name="Train"
-        bg={Train}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-      />
-    </Container>
-    <Container>
-      <Map
-        name="Overpass"
-        bg={Overpass}
-        firstTeamLogo={VitalityLogo}
-        secondTeamLogo={FnaticLogo}
-      />
-    </Container> */}
+    <MapStats
+      open
+      name="inferno"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      secondTeamChoise="pick"
+    />
+    <MapStats
+      name="vertigo"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      secondTeamChoise="pick"
+    />
+    <MapStats
+      name="mirage"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+    />
+    <MapStats
+      name="dust2"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      secondTeamChoise="ban"
+    />
+    <MapStats
+      name="nuke"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      secondTeamChoise="ban"
+    />
+    <MapStats
+      name="train"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      firstTeamChoise="ban"
+    />
+    <MapStats
+      name="overpass"
+      firstTeamLogo={VitalityLogo}
+      secondTeamLogo={FnaticLogo}
+      firstTeamChoise="ban"
+    />
   </>
 );
 

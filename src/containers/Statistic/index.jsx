@@ -14,6 +14,10 @@ const Container = styled.div`
   border-top-left-radius: 1.6rem;
   border-top-right-radius: 1.6rem;
   margin-top: -1.6rem;
+
+  @media (min-width: 576px) {
+    padding: 0 4.8rem 6rem;
+  }
 `;
 
 const Statistic = () => {

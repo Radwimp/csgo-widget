@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0.8rem;
+  padding: 1rem 1.2rem;
   background-color: ${({ theme }) => theme.secondaryBg};
 `;
 
@@ -34,7 +34,6 @@ const Overtimes = styled.div`
 const PrimaryText = styled.div`
   font-weight: bold;
   font-size: ${({ theme }) => theme.primaryFontSize};
-  line-height: ${({ theme }) => theme.primaryLineHeight};
 `;
 
 const SecondaryText = styled.div`

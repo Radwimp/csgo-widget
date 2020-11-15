@@ -22,7 +22,7 @@ const Score = styled.div`
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 
   &:first-of-type {
-    margin-right: 1.6rem;
+    margin-right: 1.4rem;
   }
 `;
 

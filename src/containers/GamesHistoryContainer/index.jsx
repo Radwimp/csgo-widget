@@ -41,7 +41,6 @@ const Winrate = styled.div`
 
 const PrimaryText = styled.div`
   font-size: ${({ theme }) => theme.primaryFontSize};
-  line-height: ${({ theme }) => theme.primaryLineHeight};
 `;
 
 const SecondaryText = styled.div`
@@ -51,9 +50,9 @@ const SecondaryText = styled.div`
 const GamesHistoryContainer = () => {
   return (
     <>
-      <Title mainTitle="История игр" />
+      <Title>История игр</Title>
       <WinrateWrapper>
-        <TeamLogo src={VitalityLogo} alt="" />
+        <TeamLogo src={VitalityLogo} alt="Team A" />
         <Winrate>
           <div>
             <PrimaryText>20.49%</PrimaryText>
@@ -64,7 +63,7 @@ const GamesHistoryContainer = () => {
             <SecondaryText>Победы/3 мес</SecondaryText>
           </div>
         </Winrate>
-        <TeamLogo src={FnaticLogo} alt="" />
+        <TeamLogo src={FnaticLogo} alt="Team B" />
       </WinrateWrapper>
       <GamesHistory team="Vitality" maps="14" wins="8" games={vitalityGames} />
       <GamesHistory team="Fnatic" maps="14" wins="8" games={fnaticGames} />

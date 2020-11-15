@@ -6,7 +6,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.1rem;
-  padding: 0rem 1.7rem;
+  padding: 0rem 1.6rem;
   background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
