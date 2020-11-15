@@ -1,28 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 
+function getColors(score) {
+  const [a, b] = score.split(':');
+
+  if (+a > +b) {
+    return ['green', 'red'];
+  } else if (+a < +b) {
+    return ['red', 'green'];
+  }
+
+  return ['grey', 'grey'];
+}
+
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.tetriaryBg};
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0.4rem 1.6rem;
   margin-bottom: 0.1rem;
+  background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
 const Score = styled.div`
-  width: 12rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  width: 12rem;
+  font-weight: bold;
   font-size: ${({ theme }) => theme.primaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
 `;
 
 const TeamLogo = styled.img`
   width: 3.2rem;
-  height: 3.2rem;
   border: 0.5rem solid transparent;
   border-radius: 50%;
   box-shadow: 0 0 0 0.1rem
@@ -49,16 +60,22 @@ const PastMatchResult = ({
   secondTeamLogo,
   score,
   eventLogo,
-  firstTeamColor,
-  secondTeamColor,
 }) => {
   return (
     <Container>
       <Date>{date}</Date>
       <Score>
-        <TeamLogo color={firstTeamColor} src={firstTeamLogo} alt="Team A" />
+        <TeamLogo
+          color={getColors(score)[0]}
+          src={firstTeamLogo}
+          alt="Team A"
+        />
         {score}
-        <TeamLogo color={secondTeamColor} src={secondTeamLogo} alt="Team B" />
+        <TeamLogo
+          color={getColors(score)[1]}
+          src={secondTeamLogo}
+          alt="Team B"
+        />
       </Score>
       <EventLogoWrapper>
         <EventLogo src={eventLogo} alt="Event" />

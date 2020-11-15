@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.secondaryBg};
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0.8rem;
+  padding: 1rem 1.2rem;
+  background-color: ${({ theme }) => theme.secondaryBg};
 `;
 
 const TeamInfo = styled.div`
@@ -32,9 +32,8 @@ const Overtimes = styled.div`
 `;
 
 const PrimaryText = styled.div`
-  font-size: ${({ theme }) => theme.primaryFontSize};
-  line-height: ${({ theme }) => theme.primaryLineHeight};
   font-weight: bold;
+  font-size: ${({ theme }) => theme.primaryFontSize};
 `;
 
 const SecondaryText = styled.div`

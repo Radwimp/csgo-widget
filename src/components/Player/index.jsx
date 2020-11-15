@@ -5,9 +5,9 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.tetriaryBg};
   margin-bottom: 0.1rem;
-  padding: 0rem 1.7rem;
+  padding: 0rem 1.6rem;
+  background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
 const Photo = styled.img`
@@ -16,7 +16,7 @@ const Photo = styled.img`
 `;
 
 const Name = styled.div`
-  color: ${({ theme }) => theme.secondaryText}; ;
+  color: ${({ theme }) => theme.secondaryText};
 `;
 
 const Nick = styled.div`
@@ -35,7 +35,7 @@ const CountryWrapper = styled.div`
 const Player = ({ name, nick, photo, countryFlag }) => (
   <>
     <Container>
-      <Photo src={photo} alt="Player A" />
+      <Photo src={photo} alt={nick} />
       <div>
         <Nick>{nick}</Nick>
         <Name>{name}</Name>

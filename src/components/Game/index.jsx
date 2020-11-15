@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 function getResult(score) {
-  if (score.split(':')[0] > score.split(':')[1]) {
+  if (+score.split(':')[0] > +score.split(':')[1]) {
     return <Result color="green">В</Result>;
-  } else if (score.split(':')[0] < score.split(':')[1]) {
+  } else if (+score.split(':')[0] < +score.split(':')[1]) {
     return <Result color="red">П</Result>;
   }
 
@@ -26,9 +26,9 @@ const Date = styled.div`
 `;
 
 const Score = styled.div`
-  width: 18rem;
   display: flex;
   justify-content: space-between;
+  width: 18rem;
   align-items: center;
 `;
 
@@ -39,9 +39,9 @@ const Team = styled.div`
 const Result = styled.div`
   width: 2rem;
   margin-top: 0.4rem;
-  background-color: ${({ color, theme }) => theme[color]};
-  color: white;
   border-radius: 0.4rem;
+  color: white;
+  background-color: ${({ color, theme }) => theme[color]};
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
@@ -55,10 +55,10 @@ const EventLogo = styled.img`
 `;
 
 const Game = ({
-  date,
+  date = 'TBA',
   eventLogo,
-  firstTeamName,
-  secondTeamName,
+  firstTeamName = 'Team A',
+  secondTeamName = 'Team B',
   firstTeamLogo,
   secondTeamLogo,
   score = '0:0',

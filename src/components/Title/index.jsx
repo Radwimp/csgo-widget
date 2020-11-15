@@ -4,13 +4,17 @@ import styled from 'styled-components';
 const Container = styled.div`
   padding: 2.4rem 0 1.6rem;
   text-align: left;
+
+  @media (min-width: 576px) {
+    padding-top: 4.8rem;
+  }
 `;
 
 const MainTitle = styled.div`
+  text-transform: uppercase;
+  font-weight: bold;
   font-size: ${({ theme }) => theme.secondaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
-  text-transform: uppercase;
 `;
 
 const SubTitle = styled.div`
@@ -19,10 +23,10 @@ const SubTitle = styled.div`
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
-const Title = ({ mainTitle, subTitle }) => {
+const Title = ({ children, subTitle }) => {
   return (
     <Container>
-      <MainTitle>{mainTitle}</MainTitle>
+      <MainTitle>{children}</MainTitle>
       {subTitle && <SubTitle>{subTitle}</SubTitle>}
     </Container>
   );

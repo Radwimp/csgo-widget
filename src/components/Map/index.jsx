@@ -1,6 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/** Images **/
+import Inferno from '../../assets/mobile/maps/inferno.png';
+import Vertigo from '../../assets/mobile/maps/vertigo.png';
+import Mirage from '../../assets/mobile/maps/mirage.png';
+import Dust2 from '../../assets/mobile/maps/dust2.png';
+import Nuke from '../../assets/mobile/maps/nuke.png';
+import Train from '../../assets/mobile/maps/train.png';
+import Overpass from '../../assets/mobile/maps/overpass.png';
+
+function getMapBg(name) {
+  switch (name) {
+    case 'inferno':
+      return Inferno;
+    case 'vertigo':
+      return Vertigo;
+    case 'mirage':
+      return Mirage;
+    case 'dust2':
+      return Dust2;
+    case 'nuke':
+      return Nuke;
+    case 'train':
+      return Train;
+    case 'overpass':
+      return Overpass;
+    default:
+      return null;
+  }
+}
+
 function getChoise(choise) {
   if (choise === 'pick') {
     return <Choise color="blue">pick</Choise>;
@@ -15,28 +45,30 @@ const MapHead = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.8rem 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
 `;
 
 const Team = styled.div`
   display: flex;
+  justify-content: ${({ align }) =>
+    align === 'right' ? 'flex-end' : 'flex-start'};
   align-items: center;
+  width: 6.8rem;
 `;
 
 const TeamLogo = styled.img`
   width: 1.6rem;
-  margin: 0.8rem 2rem;
 `;
 
 const Choise = styled.div`
-  background-color: ${({ color, theme }) => theme[color]};
+  width: 3.2rem;
+  margin: 0 1.2rem;
   border-radius: 0.4rem;
   text-transform: uppercase;
+  background-color: ${({ color, theme }) => theme[color]};
   font-weight: normal;
-  width: 3.2rem;
-  height: 1.4rem;
-  padding-bottom: 1.6rem;
 `;
 
 const MapSummary = styled.div`
@@ -49,55 +81,27 @@ const MapSummary = styled.div`
   color: white;
 `;
 
-const PrimaryText = styled.div`
-  font-size: ${({ theme }) => theme.tetriaryFontSize};
-  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
-`;
-
-const SecondaryText = styled.div`
-  color: ${({ theme }) => theme.grey};
-`;
-
-const LeftSide = styled.div`
-  text-align: left;
-`;
-
-const RightSide = styled.div`
-  text-align: right;
-`;
-
 const Map = ({
   name,
-  bg,
   firstTeamLogo,
   secondTeamLogo,
   firstTeamChoise,
   secondTeamChoise,
-  open,
+  children,
 }) => (
   <>
     <MapHead>
-      <Team>
+      <Team align="left">
         <TeamLogo src={firstTeamLogo} alt="Team A" />
         {getChoise(firstTeamChoise)}
       </Team>
       {name}
-      <Team>
+      <Team align="right">
         {getChoise(secondTeamChoise)}
         <TeamLogo src={secondTeamLogo} alt="Team B" />
       </Team>
     </MapHead>
-    <MapSummary bg={bg}>
-      <LeftSide>
-        <PrimaryText>17%</PrimaryText>
-        <SecondaryText>6 maps</SecondaryText>
-      </LeftSide>
-      {!open && <u>Статистика карты</u>}
-      <RightSide>
-        <PrimaryText bold>78%</PrimaryText>
-        <SecondaryText>9 maps</SecondaryText>
-      </RightSide>
-    </MapSummary>
+    <MapSummary bg={getMapBg(name)}>{children}</MapSummary>
   </>
 );
 

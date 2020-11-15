@@ -24,27 +24,30 @@ const Date = styled.div`
 
 const EventName = styled.div`
   margin: 0.8rem;
+  font-weight: bold;
   font-size: ${({ theme }) => theme.primaryFontSize};
   line-height: ${({ theme }) => theme.primaryLineHeight};
-  font-weight: bold;
 `;
 
 const Teams = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 2.4rem;
+
+  @media (min-width: 576px) {
+    justify-content: space-around;
+  }
 `;
 
 const Minus = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 0.8rem 0 1.4rem;
   font-size: 4.8rem;
-  line-height: 8rem;
+  line-height: 6.4rem;
 `;
 
 const GameFormat = styled.div`
-  margin-top: 0.6rem;
   color: ${({ theme }) => theme.secondaryText};
   font-size: ${({ theme }) => theme.tetriaryFontSize};
   line-height: ${({ theme }) => theme.secondaryLineHeight};
