@@ -67,7 +67,10 @@ const Scoreboard = () => {
 
   return (
     <Container>
-      <SwitchTransition>
+      <Date onClick={() => setLive(prevLive => !prevLive)}>
+        22.10.20 - 16:00
+      </Date>
+      {/* <SwitchTransition>
         <Transition>
           {live ? (
             <Live>Live</Live>
@@ -75,7 +78,7 @@ const Scoreboard = () => {
             <Date onClick={() => setLive(live => !live)}>22.10.20 - 16:00</Date>
           )}
         </Transition>
-      </SwitchTransition>
+      </SwitchTransition> */}
       <EventName>2020 FunSpark ULTI</EventName>
       <Teams>
         <Team logo={VitalityLogo} name="Vitality" rank="4" />

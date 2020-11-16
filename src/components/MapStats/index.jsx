@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-/** Comonents **/
-import Map from '../../components/Map';
+/** Components **/
+import Map from '../Map';
 
 const Container = styled.div`
   margin-bottom: 0.8rem;
