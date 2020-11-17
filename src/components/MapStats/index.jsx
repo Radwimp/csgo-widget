@@ -1,13 +1,41 @@
 import React, { useState } from 'react';
+import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
 /** Components **/
 import Map from '../Map';
 
+const duration = 700;
+
+const defaultDetailsStyle = {
+  transition: `max-height ${duration}ms ease`,
+  maxHeight: 0,
+};
+
+const defaultTextStyle = {
+  transition: `opacity ${duration}ms ease`,
+  opacity: 0,
+};
+
+const collapseDetailsStyles = {
+  entering: { maxHeight: 180 },
+  entered: { maxHeight: 180 },
+  exiting: { maxHeight: 0 },
+  exited: { maxHeight: 0 },
+};
+
+const fadeTextStyles = {
+  entering: { opacity: 1 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 0 },
+};
+
 const Container = styled.div`
   margin-bottom: 0.8rem;
   background-color: ${({ theme }) => theme.secondaryBg};
   border-radius: 0.8rem;
+  overflow: hidden;
 
   @media (min-width: 576px) {
     margin-bottom: 1.6rem;
@@ -53,47 +81,65 @@ const HideStats = styled.div`
 `;
 
 const MapStats = ({ open: openByDefault, ...map }) => {
-  const [open, setOpen] = useState(openByDefault);
+  const [open, setOpen] = useState(!!openByDefault);
 
   return (
     <>
-      <Container onClick={() => setOpen(!open)}>
+      <Container onClick={() => setOpen(open => !open)}>
         <Map {...map}>
           <LeftSide>
             <PrimaryText>17%</PrimaryText>
             <SecondaryText>6 maps</SecondaryText>
           </LeftSide>
-          {!open && <u>Статистика карты</u>}
+          <Transition in={!open} timeout={duration}>
+            {state => (
+              <u
+                style={{
+                  ...defaultTextStyle,
+                  ...fadeTextStyles[state],
+                }}
+              >
+                Статистика карты
+              </u>
+            )}
+          </Transition>
           <RightSide>
             <PrimaryText bold>78%</PrimaryText>
             <SecondaryText>9 maps</SecondaryText>
           </RightSide>
         </Map>
-        {open && (
-          <>
-            <Stat>
-              <StyledSpan>250</StyledSpan>
-              <StyledSpan>Avg. rounds</StyledSpan>
-              <StyledSpan bold>390</StyledSpan>
-            </Stat>
-            <Stat>
-              <StyledSpan bold>179</StyledSpan>
-              <StyledSpan>Round won</StyledSpan>
-              <StyledSpan>140</StyledSpan>
-            </Stat>
-            <Stat>
-              <StyledSpan color="red">51.2%</StyledSpan>
-              <StyledSpan>CT round win percent</StyledSpan>
-              <StyledSpan color="green">62.2%</StyledSpan>
-            </Stat>
-            <Stat>
-              <StyledSpan color="red">51.2%</StyledSpan>
-              <StyledSpan>T round win percent</StyledSpan>
-              <StyledSpan color="green">62.2%</StyledSpan>
-            </Stat>
-            <HideStats>Скрыть статистику</HideStats>
-          </>
-        )}
+        <Transition in={open} timeout={duration}>
+          {state => (
+            <div
+              style={{
+                ...defaultDetailsStyle,
+                ...collapseDetailsStyles[state],
+              }}
+            >
+              <Stat>
+                <StyledSpan>250</StyledSpan>
+                <StyledSpan>Avg. rounds</StyledSpan>
+                <StyledSpan bold>390</StyledSpan>
+              </Stat>
+              <Stat>
+                <StyledSpan bold>179</StyledSpan>
+                <StyledSpan>Round won</StyledSpan>
+                <StyledSpan>140</StyledSpan>
+              </Stat>
+              <Stat>
+                <StyledSpan color="red">51.2%</StyledSpan>
+                <StyledSpan>CT round win percent</StyledSpan>
+                <StyledSpan color="green">62.2%</StyledSpan>
+              </Stat>
+              <Stat>
+                <StyledSpan color="red">51.2%</StyledSpan>
+                <StyledSpan>T round win percent</StyledSpan>
+                <StyledSpan color="green">62.2%</StyledSpan>
+              </Stat>
+              <HideStats>Скрыть статистику</HideStats>
+            </div>
+          )}
+        </Transition>
       </Container>
     </>
   );

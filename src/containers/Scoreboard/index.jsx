@@ -9,8 +9,23 @@ import FnaticLogo from '../../assets/teams/fnatic.png';
 /** Components **/
 import Team from '../../components/Team';
 
+const duration = 500;
+
+const defaultTextStyle = {
+  transition: `opacity ${duration}ms, transform ${duration}ms`,
+  opacity: 1,
+};
+
+const fadeTextStyles = {
+  entering: { opacity: 0, transform: 'translateX(-50%)' },
+  entered: { opacity: 1, transform: 'translateX(0%)' },
+  exiting: { opacity: 0, transform: 'translateX(50%)' },
+  exited: { opacity: 1, transform: 'translateX(0%)' },
+};
+
 const Container = styled.div`
   padding: 2.4rem 2.4rem 4rem;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.tetriaryBg};
 `;
 
@@ -25,7 +40,7 @@ const Date = styled.div`
 
 const Live = styled.div`
   width: 3.2rem;
-  margin: auto;
+  margin: 0.4rem auto 1.2rem;
   border-radius: 0.4rem;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.red};
@@ -67,18 +82,36 @@ const Scoreboard = () => {
 
   return (
     <Container>
-      <Date onClick={() => setLive(prevLive => !prevLive)}>
-        22.10.20 - 16:00
-      </Date>
-      {/* <SwitchTransition>
-        <Transition>
-          {live ? (
-            <Live>Live</Live>
-          ) : (
-            <Date onClick={() => setLive(live => !live)}>22.10.20 - 16:00</Date>
+      <SwitchTransition>
+        <Transition in={live} timeout={duration} key={live}>
+          {state => (
+            <div
+              style={{
+                ...defaultTextStyle,
+                ...fadeTextStyles[state],
+              }}
+            >
+              {live ? (
+                <Live
+                  onClick={() => {
+                    setLive(live => !live);
+                  }}
+                >
+                  Live
+                </Live>
+              ) : (
+                <Date
+                  onClick={() => {
+                    setLive(live => !live);
+                  }}
+                >
+                  22.10.20 - 16:00
+                </Date>
+              )}
+            </div>
           )}
         </Transition>
-      </SwitchTransition> */}
+      </SwitchTransition>
       <EventName>2020 FunSpark ULTI</EventName>
       <Teams>
         <Team logo={VitalityLogo} name="Vitality" rank="4" />

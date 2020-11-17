@@ -7,6 +7,7 @@ import MapsStats from '../MapsStats';
 import Maps from '../Maps';
 import Rosters from '../Rosters';
 import GamesHistoryContainer from '../GamesHistoryContainer';
+import MapTimeline from '../MapTimeline';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.primaryBg};
@@ -24,6 +25,7 @@ const Statistic = () => {
   return (
     <Container>
       <Maps />
+      {/* <MapTimeline /> */}
       <PastMatches />
       <GamesHistoryContainer />
       <MapsStats />
