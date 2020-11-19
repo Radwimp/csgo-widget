@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import Title from '../../components/Title';
 
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 

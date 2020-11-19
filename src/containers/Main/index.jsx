@@ -1,6 +1,6 @@
 import React from 'react';
 
-/** Containers **/
+/* Containers */
 import Scoreboard from '../Scoreboard';
 import Statistic from '../Statistic';
 

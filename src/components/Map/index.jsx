@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Images **/
+/* Images */
 import Inferno from '../../assets/mobile/maps/inferno.png';
 import Vertigo from '../../assets/mobile/maps/vertigo.png';
 import Mirage from '../../assets/mobile/maps/mirage.png';

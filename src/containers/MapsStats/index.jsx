@@ -1,10 +1,10 @@
 import React from 'react';
 
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 
-/** Components **/
+/* Components */
 import Title from '../../components/Title';
 import MapStats from '../../components/MapStats';
 

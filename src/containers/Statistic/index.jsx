@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Containers **/
+/* Containers */
 import PastMatches from '../PastMatches';
 import MapsStats from '../MapsStats';
 import Maps from '../Maps';

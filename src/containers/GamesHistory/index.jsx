@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import Game from '../../components/Game';
 
 const Container = styled.div`

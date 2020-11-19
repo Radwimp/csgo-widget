@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import Map from '../Map';
 
 const duration = 700;

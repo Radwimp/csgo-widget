@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import Title from '../../components/Title';
 import Player from '../../components/Player';
 
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 
-/** Consts **/
+/* Consts */
 import { fnaticRoster, vitalityRoster } from './rosters';
 
 const Container = styled.div`

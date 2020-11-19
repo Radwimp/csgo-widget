@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import PastMatchesSummary from '../../components/PastMatchesSummary';
 import PastMatchResult from '../../components/PastMatchResult';
 import Title from '../../components/Title';
 
-/** Consts **/
+/* Consts */
 import { summary, results } from './results';
 
 const Container = styled.div`

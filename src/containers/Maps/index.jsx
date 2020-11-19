@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Components **/
+/* Components */
 import Title from '../../components/Title';
 
 const StyledMaps = styled.div`

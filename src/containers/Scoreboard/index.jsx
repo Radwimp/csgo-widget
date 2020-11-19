@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 
-/** Components **/
+/* Components */
 import Team from '../../components/Team';
 
-const duration = 500;
+const duration = 300;
 
 const defaultTextStyle = {
   transition: `opacity ${duration}ms, transform ${duration}ms`,
@@ -17,9 +17,9 @@ const defaultTextStyle = {
 };
 
 const fadeTextStyles = {
-  entering: { opacity: 0, transform: 'translateX(-50%)' },
+  entering: { opacity: 0, transform: 'translateX(-30%)' },
   entered: { opacity: 1, transform: 'translateX(0%)' },
-  exiting: { opacity: 0, transform: 'translateX(50%)' },
+  exiting: { opacity: 0, transform: 'translateX(30%)' },
   exited: { opacity: 1, transform: 'translateX(0%)' },
 };
 

@@ -1,4 +1,4 @@
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 import TriangleLogo from '../../assets/events/triangle.png';

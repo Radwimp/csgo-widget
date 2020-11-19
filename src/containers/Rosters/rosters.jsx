@@ -1,4 +1,4 @@
-/** Images **/
+/* Images */
 import France from '../../assets/country/France.svg';
 import Sweden from '../../assets/country/Sweden.svg';
 import Shox from '../../assets/players/shox.svg';

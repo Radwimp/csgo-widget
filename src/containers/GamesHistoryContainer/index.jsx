@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/** Images **/
+/* Images */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 
-/** Components **/
+/* Components */
 import Title from '../../components/Title';
 import GamesHistory from '../GamesHistory';
 
-/** Consts **/
+/* Consts */
 import { vitalityGames, fnaticGames } from './games';
 
 const WinrateWrapper = styled.div`

@@ -1,4 +1,4 @@
-/** Teams **/
+/* Teams */
 import VitalityLogo from '../../assets/teams/vitality.png';
 import FnaticLogo from '../../assets/teams/fnatic.png';
 import NaviLogo from '../../assets/teams/navi.png';
@@ -9,7 +9,7 @@ import WislaKrakowLogo from '../../assets/teams/wisla-krakow.png';
 import TriangleLogo from '../../assets/events/triangle.png';
 import StarLogo from '../../assets/events/star.png';
 
-/** Events **/
+/* Events */
 import EslOneLogo from '../../assets/events/esl-one.png';
 import DreamhackLogo from '../../assets/events/dreamhack.png';
 import EslProLogo from '../../assets/events/esl-pro.png';
