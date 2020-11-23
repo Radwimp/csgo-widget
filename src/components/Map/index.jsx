@@ -31,20 +31,20 @@ function getMapBg(name) {
   }
 }
 
-function getResult(totalScore = '0:0') {
+function getResult(totalScore = '') {
   const [a, b] = totalScore.split(':');
 
   if (+a > +b) {
     return [{ winner: true }, { loser: true }];
-  } else if (+a < +b) {
+  }
+  if (+a < +b) {
     return [{ loser: true }, { winner: true }];
   }
 
   return null;
 }
 
-const Conteiner = styled.div`
-  width: 100%;
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -60,8 +60,12 @@ const StyledMap = styled.div`
   }
 `;
 
+const ScoreBox = styled.div`
+  padding: 0.4rem;
+`;
+
 const LeftSide = styled.div`
-  width: 9rem;
+  min-width: 40%;
   text-align: left;
 
   ${({ winner }) =>
@@ -128,16 +132,11 @@ const Live = styled.div`
 `;
 
 const PrimaryText = styled.div`
-  padding-top: 0.4rem;
-  opacity: 1;
   line-height: ${({ theme }) => theme.secondaryLineHeight};
   font-size: ${({ theme }) => theme.tetriaryFontSize};
-  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
 `;
 
 const SecondaryText = styled.div`
-  font-weight: normal;
-  padding-bottom: 0.4rem;
   color: ${({ theme }) => theme.grey};
 `;
 
@@ -163,21 +162,25 @@ const Map = ({
         firstTeamChoise={firstTeamChoise}
         secondTeamChoise={secondTeamChoise}
       >
-        <Conteiner>
+        <Container>
           <LeftSide {...getResult(totalScore)?.[0]}>
             <PrimaryText>{firstTeamName}</PrimaryText>
           </LeftSide>
-          <div>
-            <PrimaryText bold>{totalScore}</PrimaryText>
+          <ScoreBox>
+            {totalScore && (
+              <PrimaryText>
+                <b>{totalScore}</b>
+              </PrimaryText>
+            )}
             {live && <Live>live</Live>}
             <SecondaryText>
-              {firstHalfScore};{secondHalfScore}
+              {firstHalfScore}; {secondHalfScore}
             </SecondaryText>
-          </div>
+          </ScoreBox>
           <RightSide {...getResult(totalScore)?.[1]}>
             <PrimaryText>{secondTeamName}</PrimaryText>
           </RightSide>
-        </Conteiner>
+        </Container>
       </MapWrapper>
     </StyledMap>
   );
