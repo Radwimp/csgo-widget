@@ -1,4 +1,4 @@
-FROM node:12.16.0-alpine AS builder
+FROM node:14.15.1-alpine AS builder
 
 WORKDIR /usr/src/
 
@@ -7,14 +7,12 @@ COPY . ./
 RUN yarn install
 RUN yarn build
 
-FROM node:12.16.0-alpine
+FROM nginx:alpine
 
-RUN yarn global add serve
+WORKDIR /var/www/
 
-WORKDIR /usr/app/
+COPY ./status.html ./
+COPY ./status.html ./health.html
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=builder /usr/src/build .
-
-EXPOSE 3000
-
-CMD ["serve", "-p", "3000", "-s", "."]
