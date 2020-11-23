@@ -3,7 +3,7 @@ import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
 /* Components */
-import Map from '../Map';
+import MapWrapper from '../MapWrapper';
 
 const duration = 700;
 

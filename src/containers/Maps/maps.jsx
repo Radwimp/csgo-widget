@@ -7,7 +7,7 @@ const maps = [
     name: 'nuke',
     firstTeamName: 'Vitality',
     secondTeamName: 'Fnatic',
-    totalScore: '8:15',
+    totalScore: '8:16',
     firstHalfScore: '7:8',
     secondHalfScore: '1:8',
     firstTeamLogo: VitalityLogo,
