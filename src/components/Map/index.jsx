@@ -31,78 +31,156 @@ function getMapBg(name) {
   }
 }
 
-function getChoise(choise) {
-  if (choise === 'pick') {
-    return <Choise color="blue">pick</Choise>;
-  } else if (choise === 'ban') {
-    return <Choise color="red">ban</Choise>;
+function getResult(totalScore = '0:0') {
+  const [a, b] = totalScore.split(':');
+
+  if (+a > +b) {
+    return [{ winner: true }, { loser: true }];
+  } else if (+a < +b) {
+    return [{ loser: true }, { winner: true }];
   }
 
   return null;
 }
 
-const MapHead = styled.div`
+const Conteiner = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
 `;
 
-const Team = styled.div`
-  display: flex;
-  justify-content: ${({ align }) =>
-    align === 'right' ? 'flex-end' : 'flex-start'};
-  align-items: center;
-  width: 6.8rem;
+const StyledMap = styled.div`
+  margin-bottom: 1.6rem;
+  border-radius: 0.8rem;
+  background: ${({ theme }) => theme.secondaryBg};
+  overflow: hidden;
+
+  &:last-child {
+    margin: 0;
+  }
 `;
 
-const TeamLogo = styled.img`
-  width: 1.6rem;
+const LeftSide = styled.div`
+  width: 9rem;
+  text-align: left;
+
+  ${({ winner }) =>
+    winner &&
+    css`
+      background: linear-gradient(
+        90deg,
+        rgba(39, 174, 96, 0.5),
+        rgba(0, 0, 0, 0)
+      );
+
+      & > div {
+        font-weight: bold;
+      }
+    `}
+
+  ${({ loser }) =>
+    loser &&
+    css`
+      background: linear-gradient(
+        90deg,
+        rgba(235, 87, 87, 0.5),
+        rgba(0, 0, 0, 0)
+      );
+    `}
+
+  & > div {
+    padding: 1.2rem 1.6rem 0 1.6rem;
+  }
 `;
 
-const Choise = styled.div`
+const RightSide = styled(LeftSide)`
+  text-align: right;
+  ${({ winner }) =>
+    winner &&
+    css`
+      background: linear-gradient(
+        270deg,
+        rgba(39, 174, 96, 0.5),
+        rgba(0, 0, 0, 0)
+      );
+      & > div {
+        font-weight: bold;
+      }
+    `}
+
+  ${({ loser }) =>
+    loser &&
+    css`
+      background: linear-gradient(
+        270deg,
+        rgba(235, 87, 87, 0.5),
+        rgba(0, 0, 0, 0)
+      );
+    `}
+`;
+
+const Live = styled.div`
   width: 3.2rem;
-  margin: 0 1.2rem;
+  margin: 0.4rem auto 0.2rem;
   border-radius: 0.4rem;
   text-transform: uppercase;
-  background-color: ${({ color, theme }) => theme[color]};
-  font-weight: normal;
+  background-color: ${({ theme }) => theme.red};
 `;
 
-const MapSummary = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 1.6rem;
-  background-image: url(${({ bg }) => bg});
-  background-size: cover;
-  color: white;
+const PrimaryText = styled.div`
+  padding-top: 0.4rem;
+  opacity: 1;
+  line-height: ${({ theme }) => theme.secondaryLineHeight};
+  font-size: ${({ theme }) => theme.tetriaryFontSize};
+  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
+`;
+
+const SecondaryText = styled.div`
+  font-weight: normal;
+  padding-bottom: 0.4rem;
+  color: ${({ theme }) => theme.grey};
 `;
 
 const Map = ({
   name,
+  firstTeamName,
+  secondTeamName,
+  totalScore,
+  firstHalfScore,
+  secondHalfScore,
   firstTeamLogo,
   secondTeamLogo,
   firstTeamChoise,
   secondTeamChoise,
-  children,
-}) => (
-  <>
-    <MapHead>
-      <Team align="left">
-        <TeamLogo src={firstTeamLogo} alt="Team A" />
-        {getChoise(firstTeamChoise)}
-      </Team>
-      {name}
-      <Team align="right">
-        {getChoise(secondTeamChoise)}
-        <TeamLogo src={secondTeamLogo} alt="Team B" />
-      </Team>
-    </MapHead>
-    <MapSummary bg={getMapBg(name)}>{children}</MapSummary>
-  </>
-);
+  live,
+}) => {
+  return (
+    <StyledMap>
+      <MapWrapper
+        name={name}
+        firstTeamLogo={firstTeamLogo}
+        secondTeamLogo={secondTeamLogo}
+        firstTeamChoise={firstTeamChoise}
+        secondTeamChoise={secondTeamChoise}
+      >
+        <Conteiner>
+          <LeftSide {...getResult(totalScore)?.[0]}>
+            <PrimaryText>{firstTeamName}</PrimaryText>
+          </LeftSide>
+          <div>
+            <PrimaryText bold>{totalScore}</PrimaryText>
+            {live && <Live>live</Live>}
+            <SecondaryText>
+              {firstHalfScore};{secondHalfScore}
+            </SecondaryText>
+          </div>
+          <RightSide {...getResult(totalScore)?.[1]}>
+            <PrimaryText>{secondTeamName}</PrimaryText>
+          </RightSide>
+        </Conteiner>
+      </MapWrapper>
+    </StyledMap>
+  );
+};
 
 export default Map;

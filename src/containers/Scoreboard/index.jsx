@@ -44,6 +44,7 @@ const Live = styled.div`
   border-radius: 0.4rem;
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.red};
+  color: white;
 `;
 
 const EventName = styled.div`
@@ -77,9 +78,7 @@ const GameFormat = styled.div`
   line-height: ${({ theme }) => theme.secondaryLineHeight};
 `;
 
-const Scoreboard = () => {
-  const [live, setLive] = useState(true);
-
+const Scoreboard = ({ live, setLive }) => {
   return (
     <Container>
       <SwitchTransition>
