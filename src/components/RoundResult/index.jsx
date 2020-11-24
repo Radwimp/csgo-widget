@@ -51,7 +51,6 @@ function getColor(winType) {
 const Container = styled.div`
   display: flex;
   flex-direction: ${({ reverse }) => (reverse ? 'column-reverse' : 'column')};
-  justify-content: flex-start;
   width: 1.2rem;
   height: 100%;
   margin: 0 0.15rem;

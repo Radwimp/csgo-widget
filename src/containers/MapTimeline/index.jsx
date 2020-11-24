@@ -40,8 +40,7 @@ const ScoreBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  margin: 0 0.4rem;
-  padding: 0.8rem 0;
+  padding: 0.8rem 1rem;
 `;
 
 const ScoreCT = styled.div`
