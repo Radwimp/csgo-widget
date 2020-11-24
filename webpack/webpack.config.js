@@ -15,6 +15,7 @@ export default (env, options) => ({
   devtool: 'source-map',
   entry: ['react-hot-loader/patch', entryPath],
   output: {
+    filename: '[name].[contenthash].js',
     publicPath: '/',
     path: outputPath,
   },
@@ -61,10 +62,6 @@ export default (env, options) => ({
     }),
     new HtmlWebpackPlugin({
       template: templatePath,
-      files: {
-        js: ['bundle.js'],
-        css: ['style.css'],
-      },
     }),
     new CopyWebpackPlugin([
       {
