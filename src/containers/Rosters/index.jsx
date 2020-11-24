@@ -56,7 +56,7 @@ const Rosters = () => (
         {vitalityRoster.map(player => (
           <Player key={player.nick} {...player} />
         ))}
-      </RosterWrapper>{' '}
+      </RosterWrapper>
       <RosterWrapper>
         <Team>
           <TeamLogo src={FnaticLogo} alt="Team B" />

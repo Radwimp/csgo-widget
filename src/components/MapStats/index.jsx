@@ -3,7 +3,7 @@ import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 
 /* Components */
-import Map from '../Map';
+import MapWrapper from '../MapWrapper';
 
 const duration = 700;
 
@@ -40,6 +40,13 @@ const Container = styled.div`
   @media (min-width: 576px) {
     margin-bottom: 1.6rem;
   }
+`;
+
+const MapContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
 `;
 
 const PrimaryText = styled.div`
@@ -86,28 +93,30 @@ const MapStats = ({ open: openByDefault, ...map }) => {
   return (
     <>
       <Container onClick={() => setOpen(open => !open)}>
-        <Map {...map}>
-          <LeftSide>
-            <PrimaryText>17%</PrimaryText>
-            <SecondaryText>6 maps</SecondaryText>
-          </LeftSide>
-          <Transition in={!open} timeout={duration}>
-            {state => (
-              <u
-                style={{
-                  ...defaultTextStyle,
-                  ...fadeTextStyles[state],
-                }}
-              >
-                Статистика карты
-              </u>
-            )}
-          </Transition>
-          <RightSide>
-            <PrimaryText bold>78%</PrimaryText>
-            <SecondaryText>9 maps</SecondaryText>
-          </RightSide>
-        </Map>
+        <MapWrapper {...map}>
+          <MapContainer>
+            <LeftSide>
+              <PrimaryText>17%</PrimaryText>
+              <SecondaryText>6 maps</SecondaryText>
+            </LeftSide>
+            <Transition in={!open} timeout={duration}>
+              {state => (
+                <u
+                  style={{
+                    ...defaultTextStyle,
+                    ...fadeTextStyles[state],
+                  }}
+                >
+                  Статистика карты
+                </u>
+              )}
+            </Transition>
+            <RightSide>
+              <PrimaryText bold>78%</PrimaryText>
+              <SecondaryText>9 maps</SecondaryText>
+            </RightSide>
+          </MapContainer>
+        </MapWrapper>
         <Transition in={open} timeout={duration}>
           {state => (
             <div
