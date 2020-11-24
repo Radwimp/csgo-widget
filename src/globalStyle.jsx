@@ -40,7 +40,6 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
-    line-height: 2rem;
     color: ${({ theme }) => theme.primaryText};
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
