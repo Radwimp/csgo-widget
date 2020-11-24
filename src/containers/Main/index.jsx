@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 /* Containers */
 import Scoreboard from '../Scoreboard';
+import Maps from '../Maps';
+import MapTimeline from '../MapTimeline';
 import PastMatches from '../PastMatches';
 import MapsStats from '../MapsStats';
-import Maps from '../Maps';
 import Rosters from '../Rosters';
 import GamesHistoryContainer from '../GamesHistoryContainer';
 
@@ -28,6 +29,7 @@ const Main = () => {
       <Scoreboard live={live} setLive={setLive} />
       <Container>
         <Maps live={live} />
+        <MapTimeline />
         <PastMatches />
         <GamesHistoryContainer />
         <MapsStats />

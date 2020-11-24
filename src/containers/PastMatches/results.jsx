@@ -20,7 +20,7 @@ const results = [
     date: '4.07.20',
     firstTeamLogo: VitalityLogo,
     secondTeamLogo: FnaticLogo,
-    score: '2:1',
+    score: '1:1',
     eventLogo: EslProLogo,
   },
   {
@@ -48,7 +48,7 @@ const results = [
     date: '2.08.20',
     firstTeamLogo: VitalityLogo,
     secondTeamLogo: FnaticLogo,
-    score: '0:2',
+    score: '1:2',
     eventLogo: TriangleLogo,
   },
 ];

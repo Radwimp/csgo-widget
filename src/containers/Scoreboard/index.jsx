@@ -64,7 +64,7 @@ const Teams = styled.div`
   }
 `;
 
-const Minus = styled.div`
+const Score = styled.div`
   display: flex;
   justify-content: center;
   margin: 0.8rem 0 1.4rem;
@@ -115,7 +115,7 @@ const Scoreboard = ({ live, setLive }) => {
       <Teams>
         <Team logo={VitalityLogo} name="Vitality" rank="4" />
         <div>
-          <Minus>-</Minus>
+          <Score>{live ? '1:1' : '-'}</Score>
           <GameFormat>Best of 3</GameFormat>
         </div>
         <Team logo={FnaticLogo} name="Fnatic" rank="2" />

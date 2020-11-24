@@ -117,7 +117,8 @@ const Map = ({
             )}
             {live && <Live>live</Live>}
             <SecondaryText>
-              {firstHalfScore}; {secondHalfScore}
+              {firstHalfScore}
+              {secondHalfScore && `;${secondHalfScore}`}
             </SecondaryText>
           </ScoreBox>
           {getTeamBlock(totalScore, 'right', secondTeamName)}

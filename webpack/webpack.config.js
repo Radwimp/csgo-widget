@@ -15,7 +15,7 @@ export default (env, options) => ({
   devtool: 'source-map',
   entry: ['react-hot-loader/patch', entryPath],
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
     path: outputPath,
   },

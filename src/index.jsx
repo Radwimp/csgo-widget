@@ -11,6 +11,7 @@ const commonTheme = {
   green: '#27AE60',
   red: '#EB5757',
   blue: '#2F80ED',
+  orange: '#F2994A;',
   grey: '#BDBDBD',
   primaryFontSize: '1.8rem',
   secondaryFontSize: '1.6rem',
